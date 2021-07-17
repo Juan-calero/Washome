@@ -1,0 +1,119 @@
+@import "../../main";
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    background: $pastel;
+    min-height: 80vh;
+    overflow: hidden;
+}
+.bigbubble {
+    position: absolute;
+    bottom: -10%;
+}
+.smallbubble {
+    position: absolute;
+}
+.text {
+    position: relative;
+    z-index: 1;
+    color: $lightBlue;
+    & p {
+        margin-top: 1rem;
+        color: $blue;
+    }
+}
+.form {
+    margin: 2rem auto 1rem;
+    width: #{"min(90%,45rem)"};
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    & div {
+        display: flex;
+    }
+    & input,
+    & textarea {
+        width: 100%;
+        margin: 0.5em 0;
+        border: none;
+        border-bottom: 1px solid $black;
+        background-color: transparent;
+        padding: 0.5rem;
+        &:hover,
+        &:focus {
+            border-color: $lightBlue;
+            border-width: 1px;
+            outline: none;
+        }
+    }
+    & textarea {
+        border: 1px solid $black;
+    }
+}
+.wrapper {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+.info {
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    margin: 1rem auto;
+    background-color: white;
+    & svg {
+        width: #{"min(40vw,3rem)"};
+        fill: $lightBlue;
+    }
+    & p {
+        color: $black;
+        line-height: 0.1rem;
+        font-size: #{"min(4vw,1rem)"};
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .bigbubble {
+        right: #{"min(-5%, 60rem)"};
+        width: #{"min(54vw, 20rem)"};
+    }
+    .smallbubble {
+        display: none;
+        top: 7%;
+        left: #{"min(-5%, 60rem)"};
+        width: #{"min(18vw, 9rem)"};
+    }
+    .contato {
+        & form {
+            & div {
+                flex-direction: column;
+            }
+        }
+    }
+}
+@media screen and (min-width: 1024px) {
+    .bigbubble {
+        right: #{"min(10%, 60rem)"};
+        width: #{"min(54vw, 20rem)"};
+    }
+    .smallbubble {
+        top: 2%;
+        left: #{"min(10%, 60rem)"};
+        width: #{"min(18vw, 9rem)"};
+    }
+    .form {
+        & div {
+            justify-content: space-between;
+            & * {
+                width: 49%;
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+@import "../../main";
+
+//REFATOR THIS WHOLE FILE
+
+.testemunhos {
+    padding-top: 15vh;
+    position: relative;
+    min-height: 60vh;
+    background-image: url(../../img/BgTestemunho.webp);
+    background-repeat: repeat;
+    background-size: contain;
+    background-color: darken($brown, 20%);
+    background-blend-mode: color-dodge;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.carousel {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.inner {
+    height: 100%;
+    display: flex;
+    transition: all 0.9s;
+}
+.carouselItem {
+    padding: 1rem 2rem;
+    box-shadow: 0px 0px 12px rgba($color: #000000, $alpha: 0.3);
+    background-image: url(../../img/carouselItem.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #fdf1e3;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & div {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        & p {
+            font-size: #{"min(4vw,1.3rem)"};
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+    }
+}
+.nav {
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text {
+    margin: auto;
+    width: 100%;
+}
+svg {
+    width: 2rem;
+    fill: white;
+}
+.cardsnav {
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+}
+.line {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    margin: 0.2rem;
+    transition: all 0.2s ease;
+    &::after {
+        content: "";
+        background: $pastel;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.25rem;
+        margin: auto;
+        pointer-events: none;
+    }
+    &:hover,
+    &:focus {
+        width: 4rem;
+    }
+}
+.active2 {
+    width: 4rem;
+    &::after {
+        height: 0.4rem;
+        background: $blue;
+    }
+}
+.empresas {
+    background: rgba($color: $pastel, $alpha: 0.4);
+    text-align: center;
+    width: 100%;
+    color: $blue;
+    & > h3 {
+        width: 100%;
+        margin: auto;
+    }
+    & img {
+        margin: 1rem;
+        display: inline;
+        width: 8rem;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .carousel {
+        width: #{"min(90vw,28rem)"};
+        height: #{"min(90vw,28rem)"};
+    }
+
+    .carouselItem {
+        min-width: #{"min(80vw,24rem)"};
+        margin: 0 #{"min(5vw,2rem)"};
+    }
+    .empresas {
+        padding: 2rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .testemunhos {
+        padding-top: 10vh;
+    }
+    .carousel {
+        width: 54rem;
+    }
+    .inner {
+        width: 27rem;
+    }
+    .carouselItem {
+        min-width: 25rem;
+        height: 20rem;
+        margin: 0 1rem;
+        & div p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            width: 100%;
+        }
+    }
+    .cardsnav {
+        margin: 2% 10%;
+    }
+    .empresas {
+        padding: 2rem 10%;
+        & > h3 {
+            width: 70ch;
+        }
+        & img {
+            margin: 1rem 2vw;
+        }
+    }
+}
