@@ -55,9 +55,9 @@ function Servicos() {
           </button>
         </nav>
         <p>{SERVICOS[service]}</p>
-        <button className={btn}>
-          <Link to='/servicos'>Ler mais</Link>
-        </button>
+        <Link tabIndex='-1' to='/servicos'>
+          <button className={btn}>Ler mais</button>
+        </Link>
       </div>
     </section>
   )

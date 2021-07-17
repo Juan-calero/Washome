@@ -10,5 +10,4 @@ function DetailsPage() {
     </React.Fragment>
   )
 }
-//ADD REST OF DETAILS PAGE HERE
 export default DetailsPage

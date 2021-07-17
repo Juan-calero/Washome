@@ -5,10 +5,10 @@ import {
   menu,
   burger,
   nav,
-  bg,
   list,
   deskNav,
   deskList,
+  deskItem,
 } from "./header.module.scss"
 import "../../main.scss"
 import WashomeLogo from "../../img/washomeLogoHeader.png"
@@ -19,6 +19,7 @@ function Header() {
   return (
     <header className={header}>
       <img
+        loading='eager'
         className={logo}
         src={WashomeLogo}
         alt='Logotipo Washome Preto - Limpeza Têxtil Profissional'
@@ -42,36 +43,40 @@ function Header() {
               <path d='M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10L4.293 5.707a1 1 0 0 1 0-1.414z' />
             </svg>
             <ul className={list}>
-              <li>
+              <li className={deskItem}>
                 <a href='#servico'>Serviços</a>
               </li>
-              <li>
+              <li className={deskItem}>
                 <a href='#sobre'>Sobre</a>
               </li>
-              <li>
+              <li className={deskItem}>
                 <a href='#testemunhos'>Testemunhos</a>
               </li>
-              <a href='#contato' className='btn__blue'>
-                Fale Connosco
-              </a>
+              <li>
+                <a href='#contato' className='btn__blue'>
+                  Fale Connosco
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
       )}
       <nav className={deskNav}>
         <ul className={deskList}>
-          <li>
+          <li className={deskItem}>
             <a href='#servico'>Serviços</a>
           </li>
-          <li>
+          <li className={deskItem}>
             <a href='#sobre'>Sobre</a>
           </li>
-          <li>
+          <li className={deskItem}>
             <a href='#testemunhos'>Testemunhos</a>
           </li>
-          <a href='#contato' className='btn__blue'>
-            Fale Connosco
-          </a>
+          <li>
+            <a href='#contato' className='btn__blue'>
+              Fale Connosco
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

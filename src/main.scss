@@ -55,9 +55,10 @@ textarea {
         color: white;
         border: 0;
         border-radius: 25px;
+        cursor: pointer;
         &:hover,
         &:focus {
-            background: $blue;
+            background: $brown;
         }
     }
 }

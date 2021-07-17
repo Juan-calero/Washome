@@ -25,6 +25,12 @@
         width: 3rem;
         cursor: pointer;
     }
+    & a {
+        &:hover,
+        &:focus {
+            filter: invert(68%) sepia(21%) saturate(747%) hue-rotate(351deg) brightness(239%) contrast(95%);
+        }
+    }
 }
 @media screen and (max-width: 1023px) {
     .footer {

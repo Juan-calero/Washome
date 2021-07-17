@@ -20,7 +20,7 @@
     z-index: 1;
     font-weight: 900;
     margin: auto;
-    & h3 {
+    & h2 {
         font-size: #{"min(6vw, 1.7rem)"};
         color: $lightBlue;
         margin: 0;
@@ -47,7 +47,8 @@
                 box-sizing: content-box;
                 border-radius: 25px;
                 padding: 5px;
-                border: 2px solid $blue;
+                border: 2px solid $brown;
+                fill: $brown;
                 width: calc(#{"min(6%,1.6rem)"} + 5px);
             }
         }
@@ -60,7 +61,7 @@
     }
     .smallbubble {
         position: absolute;
-        left: #{"clamp(1rem, 70%, 30rem)"};
+        left: #{"clamp(1rem, 30%, 30rem)"};
         bottom: 27%;
         width: #{"clamp(2.5rem, 20vw, 5rem)"};
     }

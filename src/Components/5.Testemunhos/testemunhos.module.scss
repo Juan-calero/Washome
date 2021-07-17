@@ -94,6 +94,9 @@ svg {
     &:hover,
     &:focus {
         width: 4rem;
+        &:not(.active2)::after {
+            background: #333;
+        }
     }
 }
 .active2 {
@@ -115,7 +118,6 @@ svg {
     & img {
         margin: 1rem;
         display: inline;
-        width: 8rem;
     }
 }
 @media screen and (max-width: 1023px) {
@@ -150,6 +152,14 @@ svg {
             font-size: 1rem;
             margin: 0.5rem 0;
             width: 100%;
+        }
+        & a {
+            &:hover,
+            &:focus {
+                & svg {
+                    fill: $brown;
+                }
+            }
         }
     }
     .cardsnav {

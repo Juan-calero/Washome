@@ -19,6 +19,7 @@ function Header2() {
   return (
     <header className={header}>
       <img
+        loading='eager'
         className={logo}
         src={WashomeLogo}
         alt='Logotipo Washome Preto - Limpeza Têxtil Profissional'

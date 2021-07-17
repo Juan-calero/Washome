@@ -77,14 +77,14 @@
     color: white;
     &:hover,
     &:focus {
-        border-color: $lightBlue;
-        color: $lightBlue;
+        border-color: $brown;
+        color: $brown;
     }
 }
 .active {
-    color: $lightBlue;
-    border: 1px solid white;
-    background: white;
+    color: white;
+    border: 1px solid $lightBlue;
+    background: $lightBlue;
 }
 
 @media screen and (max-width: 1023px) {

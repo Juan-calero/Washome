@@ -1,5 +1,5 @@
 import React from "react"
-import { ServicoImg, servico, servico__wrap } from "./details.module.scss"
+import { servico, servico__wrap } from "./details.module.scss"
 import { frame, activeImg } from "../3.Servicos/servicos.module.scss"
 import Colchão from "../../img/ServicosMatress.webp"
 import Carpete from "../../img/ServicosCarpet.webp"
@@ -7,6 +7,7 @@ import Sofa from "../../img/ServicosCouch.webp"
 
 const DetailsItems = [
   {
+    tag: "colchoes",
     title: "Colchões",
     text: [
       "Com o tempo, os colchões acumulam transpiração e células mortas da nossa pele, que os tornam excecionais para o desenvolvimento dos ácaros que provocam amarelecimento e mau odor nos tecidos.",
@@ -19,6 +20,7 @@ const DetailsItems = [
     image: Colchão,
   },
   {
+    tag: "sofas",
     title: "Sofás & Maples",
     text: [
       "Limpar um sofá não é só aspirar ou passar um pano molhado por cima.",
@@ -32,6 +34,7 @@ const DetailsItems = [
     image: Sofa,
   },
   {
+    tag: "carpetes",
     title: "Carpetes & Tapeçarias",
     text: [
       "A acumulação de sujidade em carpetes e tapeçarias é prejudicial à saúde, retira conforto e dá má imagem ao lar.",
@@ -44,32 +47,34 @@ const DetailsItems = [
 ]
 
 function Details() {
-  const mapItems = DetailsItems.map(({ title, text, note, image }, index) => {
-    return (
-      <section key={index} class={servico}>
-        <div class={servico__wrap}>
-          <h2 class='servico__title'>{title}</h2>
-          {text.map((paragraph, index) => {
-            return (
-              <p key={index} class='servico__text'>
-                {paragraph}
-              </p>
-            )
-          })}
-          {note.map((note, index) => {
-            return (
-              <h3 key={index} class='servico__text--note'>
-                {note}
-              </h3>
-            )
-          })}
-        </div>
-        <div class={frame}>
-          <img class={activeImg} src={image} alt={title} />
-        </div>
-      </section>
-    )
-  })
+  const mapItems = DetailsItems.map(
+    ({ tag, title, text, note, image }, index) => {
+      return (
+        <section key={index} class={servico} id={tag}>
+          <div class={servico__wrap}>
+            <h2 class='servico__title'>{title}</h2>
+            {text.map((paragraph, index) => {
+              return (
+                <p key={index} class='servico__text'>
+                  {paragraph}
+                </p>
+              )
+            })}
+            {note.map((note, index) => {
+              return (
+                <h3 key={index} class='servico__text--note'>
+                  {note}
+                </h3>
+              )
+            })}
+          </div>
+          <div class={frame}>
+            <img loading='lazy' class={activeImg} src={image} alt={title} />
+          </div>
+        </section>
+      )
+    }
+  )
 
   return <React.Fragment>{mapItems}</React.Fragment>
 }

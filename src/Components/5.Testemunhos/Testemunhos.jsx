@@ -20,7 +20,6 @@ import { testemunhosArr } from "../Utils/Arrays"
 function Testemunhos() {
   const [testemunho, setTestemunho] = useState(0)
 
-  //REFACTOR THIS
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setTestemunho((prevState) => (prevState + 1) % 4)
@@ -33,6 +32,7 @@ function Testemunhos() {
   const mapNavItem = testemunhosArr.map((_, index) => {
     return (
       <button
+        aria-label={`slide ${index + 1}`}
         key={index}
         onClick={() => {
           setTestemunho(index)
@@ -58,10 +58,10 @@ function Testemunhos() {
             <i>{name}</i>
           </p>
           <a
+            aria-label='Ver Comentário no Google MyBusiness'
             href='https://g.page/r/CSu5aluFHb1xEAE'
             rel='noreferrer noopener'
-            target='_blank'
-            tabIndex='-1'>
+            target='_blank'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               preserveAspectRatio='xMidYMid meet'
@@ -86,14 +86,25 @@ function Testemunhos() {
       <nav className={cardsnav}>{mapNavItem}</nav>
       <div className={empresas}>
         <h3>Clientes satisfeitos com os nossos serviços</h3>
-        <img loading='lazy' src={Portugalia} alt='Logotipo Portugália' />
         <img
           loading='lazy'
+          width='128'
+          src={Portugalia}
+          alt='Logotipo Portugália'
+        />
+        <img
+          loading='lazy'
+          width='128'
           src={Prime}
           alt='Logotipo Prime School - International School'
         />
-        <img loading='lazy' src={Forever} alt='Logotipo Forever' />
-        <img loading='lazy' src={Segundo} alt='Logotipo Segundo Muelle' />
+        <img loading='lazy' width='128' src={Forever} alt='Logotipo Forever' />
+        <img
+          loading='lazy'
+          width='128'
+          src={Segundo}
+          alt='Logotipo Segundo Muelle'
+        />
       </div>
     </section>
   )
