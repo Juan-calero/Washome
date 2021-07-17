@@ -1,9 +1,9 @@
 import React from "react"
 import { ServicoImg, servico, servico__wrap } from "./details.module.scss"
 import { frame, activeImg } from "../3.Servicos/servicos.module.scss"
-import Colchão from "../../img/ServicosMatress.png"
-import Carpete from "../../img/ServicosCarpet.png"
-import Sofa from "../../img/ServicosCouch.png"
+import Colchão from "../../img/ServicosMatress.webp"
+import Carpete from "../../img/ServicosCarpet.webp"
+import Sofa from "../../img/ServicosCouch.webp"
 
 const DetailsItems = [
   {

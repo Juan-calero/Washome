@@ -1,6 +1,6 @@
-import Colchão from "../../img/ServicosMatress.png"
-import Sofa from "../../img/ServicosCouch.png"
-import Carpete from "../../img/ServicosCarpet.png"
+import Colchão from "../../img/ServicosMatress.webp"
+import Sofa from "../../img/ServicosCouch.webp"
+import Carpete from "../../img/ServicosCarpet.webp"
 
 export const images = [
   { alt: "colchão 3D", src: Colchão },

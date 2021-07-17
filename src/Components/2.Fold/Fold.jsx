@@ -1,7 +1,7 @@
 import React from "react"
 import { bigbubble, smallbubble, fold, text } from "./fold.module.scss"
-import BigBubble from "../../img/Bluebubble.png"
-import SmallBubble from "../../img/Brownbubble.png"
+import BigBubble from "../../img/Bluebubble.webp"
+import SmallBubble from "../../img/Brownbubble.webp"
 
 function Fold() {
   return (

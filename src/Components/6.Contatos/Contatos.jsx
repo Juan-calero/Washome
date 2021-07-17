@@ -1,6 +1,6 @@
 import React from "react"
-import BigBubble from "../../img/Bluebubble.png"
-import SmallBubble from "../../img/Brownbubble.png"
+import BigBubble from "../../img/Bluebubble.webp"
+import SmallBubble from "../../img/Brownbubble.webp"
 import {
   contato,
   bigbubble,
