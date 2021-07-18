@@ -8,7 +8,9 @@ import {
   list,
   deskNav,
   deskList,
-} from "./header2.module.scss"
+  deskItem,
+  homeLink,
+} from "../1.Header/header.module.scss"
 import "../../main.scss"
 import WashomeLogo from "../../img/washomeLogoHeader.png"
 import { Link } from "react-router-dom"
@@ -18,12 +20,14 @@ function Header2() {
 
   return (
     <header className={header}>
-      <img
-        loading='eager'
-        className={logo}
-        src={WashomeLogo}
-        alt='Logotipo Washome Preto - Limpeza Têxtil Profissional'
-      />
+      <Link aria-label='Home' to='/' className={homeLink}>
+        <img
+          className={logo}
+          loading='eager'
+          src={WashomeLogo}
+          alt='Logotipo Washome Preto - Limpeza Têxtil Profissional'
+        />
+      </Link>
       <svg
         onClick={() => setIsBurgerOpen(!isBurgerOpen)}
         className={burger}
@@ -43,42 +47,52 @@ function Header2() {
               <path d='M4.293 4.293a1 1 0 0 1 1.414 0L10 8.586l4.293-4.293a1 1 0 1 1 1.414 1.414L11.414 10l4.293 4.293a1 1 0 0 1-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L8.586 10L4.293 5.707a1 1 0 0 1 0-1.414z' />
             </svg>
             <ul className={list}>
-              <li>
+              <li className={deskItem}>
                 <Link to='/'>Home</Link>
               </li>
-              <li>
+              <li
+                onClick={() => setIsBurgerOpen(!isBurgerOpen)}
+                className={deskItem}>
                 <a href='#colchoes'>Colchões</a>
               </li>
-              <li>
+              <li
+                onClick={() => setIsBurgerOpen(!isBurgerOpen)}
+                className={deskItem}>
                 <a href='#sofas'>Sofás {"&"} Maples</a>
               </li>
-              <li>
+              <li
+                onClick={() => setIsBurgerOpen(!isBurgerOpen)}
+                className={deskItem}>
                 <a href='#carpetes'>Carpetes {"&"} Tapeçarias</a>
               </li>
-              <a href='#contato' className='btn__blue'>
-                Fale Connosco
-              </a>
+              <li onClick={() => setIsBurgerOpen(!isBurgerOpen)}>
+                <a href='#contato' className='btn__dark'>
+                  Fale Connosco
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
       )}
       <nav className={deskNav}>
         <ul className={deskList}>
-          <li>
+          <li className={deskItem}>
             <Link to='/'>Home</Link>
           </li>
-          <li>
+          <li className={deskItem}>
             <a href='#colchoes'>Colchões</a>
           </li>
-          <li>
+          <li className={deskItem}>
             <a href='#sofas'>Sofás {"&"} Maples</a>
           </li>
-          <li>
+          <li className={deskItem}>
             <a href='#carpetes'>Carpetes {"&"} Tapeçarias</a>
           </li>
-          <a href='#contato' className='btn__blue'>
-            Fale Connosco
-          </a>
+          <li>
+            <a href='#contato' className='btn__dark'>
+              Fale Connosco
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

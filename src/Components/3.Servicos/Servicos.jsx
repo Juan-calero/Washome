@@ -37,13 +37,6 @@ function Servicos() {
         <h2 className={lowerTitle}>SERVIÇOS</h2>
         <nav>
           <button
-            className={!service ? active : unactive}
-            onClick={() => {
-              setService(0)
-            }}>
-            Colchões
-          </button>
-          <button
             className={service === 1 ? active : unactive}
             onClick={() => setService(1)}>
             Sofás {"&"} Maples
@@ -52,6 +45,13 @@ function Servicos() {
             className={service === 2 ? active : unactive}
             onClick={() => setService(2)}>
             Carpetes {"&"} Tapeçarias
+          </button>
+          <button
+            className={!service ? active : unactive}
+            onClick={() => {
+              setService(0)
+            }}>
+            Colchões
           </button>
         </nav>
         <p>{SERVICOS[service]}</p>

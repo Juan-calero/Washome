@@ -24,7 +24,7 @@
 .inner {
     height: 100%;
     display: flex;
-    transition: all 0.9s;
+    transition: all 1s;
 }
 .carouselItem {
     padding: 1rem 2rem;
@@ -91,13 +91,6 @@ svg {
         margin: auto;
         pointer-events: none;
     }
-    &:hover,
-    &:focus {
-        width: 4rem;
-        &:not(.active2)::after {
-            background: #333;
-        }
-    }
 }
 .active2 {
     width: 4rem;
@@ -159,6 +152,15 @@ svg {
                 & svg {
                     fill: $brown;
                 }
+            }
+        }
+    }
+    .line {
+        &:hover,
+        &:focus {
+            width: 4rem;
+            &:not(.active2)::after {
+                background: #333;
             }
         }
     }

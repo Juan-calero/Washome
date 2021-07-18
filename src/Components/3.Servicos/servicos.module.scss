@@ -53,6 +53,7 @@
     }
     & p {
         margin: 1rem 0;
+        white-space: pre-line;
     }
 }
 .btn {
@@ -88,6 +89,11 @@
 }
 
 @media screen and (max-width: 1023px) {
+    .servicos {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: #{"max(5vh,3rem)"} 5%;
+    }
     .upperTitle {
         display: block;
     }
@@ -100,10 +106,6 @@
         & img {
             bottom: -15%;
         }
-    }
-    .servicos {
-        flex-direction: column;
-        justify-content: space-between;
     }
     .wrapper {
         & nav button {

@@ -52,20 +52,12 @@ function Details() {
       return (
         <section key={index} class={servico} id={tag}>
           <div class={servico__wrap}>
-            <h2 class='servico__title'>{title}</h2>
+            <h2>{title}</h2>
             {text.map((paragraph, index) => {
-              return (
-                <p key={index} class='servico__text'>
-                  {paragraph}
-                </p>
-              )
+              return <p key={index}>{paragraph}</p>
             })}
             {note.map((note, index) => {
-              return (
-                <h3 key={index} class='servico__text--note'>
-                  {note}
-                </h3>
-              )
+              return <h3 key={index}>{note}</h3>
             })}
           </div>
           <div class={frame}>

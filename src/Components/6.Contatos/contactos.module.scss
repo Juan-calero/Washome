@@ -20,6 +20,7 @@
     position: absolute;
 }
 .text {
+    margin-top: #{"min(9vw,9vh)"};
     position: relative;
     z-index: 1;
     color: $lightBlue;
@@ -35,26 +36,60 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
-    & div {
-        display: flex;
+}
+.formItemWrap {
+    display: flex;
+    & label {
+        text-align: start;
+    }
+}
+.li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    & label {
+        position: absolute;
+        transition: all 0.2s;
     }
     & input,
     & textarea {
         width: 100%;
-        margin: 0.5em 0;
+        margin: 1rem 0;
         border: none;
         border-bottom: 1px solid $black;
         background-color: transparent;
-        padding: 0.5rem;
-        &:hover,
-        &:focus {
+        &:required ~ label,
+        &:invalid ~ label {
+            font-size: 0.9rem;
+            top: -0.4rem;
+            color: $black;
+        }
+        &::placeholder {
+            color: transparent;
+        }
+        &:placeholder-shown ~ label {
+            pointer-events: none;
+            top: 0.4rem;
+        }
+        &:focus,
+        &:hover {
             border-color: $brown;
             border-width: 1px;
             outline: none;
+            & ~ label {
+                top: -0.4rem;
+                color: $brown;
+            }
         }
     }
     & textarea {
         border: 1px solid $black;
+
+        & ~ label {
+            background: $pastel;
+            left: -0.1rem;
+            padding: 0 0.6rem 0.6rem 0;
+        }
     }
 }
 .wrapper {
@@ -71,13 +106,12 @@
     & p {
         border-radius: 50px;
         padding: 0.7rem;
-        margin: 1rem;
+        margin: #{"max(.5rem,1vh)"} 1rem;
         background-color: white;
         color: $black;
         font-size: #{"min(4vw,1rem)"};
     }
 }
-
 @media screen and (max-width: 1023px) {
     .bigbubble {
         right: #{"min(-5%, 60rem)"};
@@ -89,12 +123,8 @@
         left: #{"min(-5%, 60rem)"};
         width: #{"min(18vw, 9rem)"};
     }
-    .contato {
-        & form {
-            & div {
-                flex-direction: column;
-            }
-        }
+    .formItemWrap {
+        flex-direction: column;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -107,12 +137,10 @@
         left: #{"min(10%, 60rem)"};
         width: #{"min(18vw, 9rem)"};
     }
-    .form {
-        & div {
-            justify-content: space-between;
-            & * {
-                width: 49%;
-            }
+    .formItemWrap {
+        justify-content: space-between;
+        & * {
+            width: 48%;
         }
     }
     .info {

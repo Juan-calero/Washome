@@ -47,7 +47,7 @@
     .servico {
         padding: 5%;
         &:first-of-type {
-            margin-top: 7rem;
+            margin-top: #{"min(9vw,9vh)"};
         }
         &__wrap {
             width: #{"min(80%,60ch)"};

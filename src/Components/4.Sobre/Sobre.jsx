@@ -17,11 +17,13 @@ import {
 function Sobre() {
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const handleScroll = () => {
-    const section = document
-      .getElementById("extrator")
-      .getBoundingClientRect().y
-    setIsScrolled(section < 400)
+  function handleScroll() {
+    if (document.getElementById("extrator")) {
+      const section = document
+        .getElementById("extrator")
+        .getBoundingClientRect().y
+      setIsScrolled(section < 400)
+    }
   }
 
   useEffect(() => {

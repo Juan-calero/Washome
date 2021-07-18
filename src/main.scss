@@ -61,6 +61,26 @@ textarea {
             background: $brown;
         }
     }
+    &__dark {
+        background: $blue;
+        margin: 1rem auto;
+        padding: 0.8rem;
+        color: white;
+        border: 0;
+        border-radius: 25px;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            background: $brown;
+        }
+    }
+}
+@media screen and (max-width: 1023px) {
+    .btn {
+        &__dark {
+            background: $lightBlue;
+        }
+    }
 }
 @media screen and (min-width: 2100px) {
     html {

@@ -23,7 +23,7 @@ function Testemunhos() {
   useEffect(() => {
     const slideInterval = setInterval(() => {
       setTestemunho((prevState) => (prevState + 1) % 4)
-    }, 6000)
+    }, 10000)
     return () => {
       clearInterval(slideInterval)
     }

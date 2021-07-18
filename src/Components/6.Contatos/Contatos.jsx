@@ -9,6 +9,8 @@ import {
   text,
   wrapper,
   info,
+  li,
+  formItemWrap,
 } from "./contactos.module.scss"
 
 const social = [
@@ -63,16 +65,28 @@ function Contatos() {
         method='POST'
         action='https://formspree.io/f/mbjqdgwj'
         id='contato--form'>
-        <div>
-          <input type='text' placeholder='Nome*' name='Nome' required />
-          <input type='tel' placeholder='Telefone*' name='Telefone' required />
+        <div className={formItemWrap}>
+          <div className={li}>
+            <input type='text' placeholder='Nome' name='Nome' required />
+            <label>Nome</label>
+          </div>
+          <div className={li}>
+            <input type='tel' placeholder='Telefone' name='Telefone' required />
+            <label>Telefone</label>
+          </div>
         </div>
-        <input type='email' placeholder='Email (Opcional)' name='_replyto' />
-        <textarea
-          placeholder='Mensagem*'
-          name='message'
-          rows='10'
-          required></textarea>
+        <div className={li}>
+          <input type='email' placeholder='Email' name='_replyto' required />
+          <label>Email</label>
+        </div>
+        <div className={li}>
+          <textarea
+            placeholder='Mensagem'
+            name='message'
+            rows='10'
+            required></textarea>
+          <label>Mensagem</label>
+        </div>
         <button className='btn__blue' type='submit'>
           Fale Connosco
         </button>
