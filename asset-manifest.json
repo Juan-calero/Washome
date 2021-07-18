@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.173b2111.chunk.css",
+    "main.js": "/static/js/main.64eefee6.chunk.js",
+    "main.js.map": "/static/js/main.64eefee6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.df1be6c2.js",
+    "runtime-main.js.map": "/static/js/runtime-main.df1be6c2.js.map",
+    "static/js/2.0b9e1c35.chunk.js": "/static/js/2.0b9e1c35.chunk.js",
+    "static/js/2.0b9e1c35.chunk.js.map": "/static/js/2.0b9e1c35.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.173b2111.chunk.css.map": "/static/css/main.173b2111.chunk.css.map",
+    "static/js/2.0b9e1c35.chunk.js.LICENSE.txt": "/static/js/2.0b9e1c35.chunk.js.LICENSE.txt",
+    "static/media/fold.module.scss": "/static/media/BgFold.d523a00f.webp",
+    "static/media/sobre.module.scss": "/static/media/BgSobre.861705f8.webp",
+    "static/media/testemunhos.module.scss": "/static/media/carouselItem.076ea650.webp",
+    "static/media/Bluebubble.b3689a48.webp": "/static/media/Bluebubble.b3689a48.webp",
+    "static/media/Brownbubble.1922ce46.webp": "/static/media/Brownbubble.1922ce46.webp",
+    "static/media/Cleaner.0c5a59ae.webp": "/static/media/Cleaner.0c5a59ae.webp",
+    "static/media/Extrator.60b026f7.png": "/static/media/Extrator.60b026f7.png",
+    "static/media/LogoForever.99584ea7.png": "/static/media/LogoForever.99584ea7.png",
+    "static/media/ServicosCarpet.8d57ea1e.webp": "/static/media/ServicosCarpet.8d57ea1e.webp",
+    "static/media/ServicosCouch.f07a7249.webp": "/static/media/ServicosCouch.f07a7249.webp",
+    "static/media/ServicosMatress.56e37baa.webp": "/static/media/ServicosMatress.56e37baa.webp",
+    "static/media/facebook.a0fab49c.png": "/static/media/facebook.a0fab49c.png",
+    "static/media/olx.0f43c211.png": "/static/media/olx.0f43c211.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df1be6c2.js",
+    "static/js/2.0b9e1c35.chunk.js",
+    "static/css/main.173b2111.chunk.css",
+    "static/js/main.64eefee6.chunk.js"
+  ]
+}
