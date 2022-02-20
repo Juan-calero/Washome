@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+  color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+h1 {
+  font-size: min(10vw, 3rem);
+  color: #2b487d;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2vw, 2rem);
+}
+
+p,
+a {
+  font-size: clamp(1rem, 1.25vw,1.25rem);
+}
+
+p {
+  width: min(100%,60ch);
+}
+
+textarea {
+  resize: none;
+}
+
+.btn__blue {
+  background: #557bb5;
+  margin: 1rem auto;
+  padding: 0.8rem;
+  color: white;
+  border: 0;
+  border-radius: 25px;
+}
+
+.btn__blue:hover, .btn__blue:focus {
+  background: #2b487d;
+}
+
+@media screen and (min-width: 2100px) {
+  html {
+    font-size: 2rem;
+  }
+}
+
+.servico {
+  position: relative;
+  padding: 5% 0;
+  min-height: 70vh;
+  overflow: hidden;
+  background: #363636;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.servico:nth-child(odd) {
+  padding: 5rem 0;
+  background: #faebd7;
+  color: #363636;
+}
+
+.servico:nth-child(odd) .servico__wrap {
+  order: 3;
+}
+
+.servico__wrap {
+  margin: auto;
+  width: min(90%,60ch);
+}
+
+.servico__wrap h2,
+.servico__wrap h3 {
+  color: #c99964;
+}
+
+/* .frame {
+    box-shadow: 2px 2px 6px rgba($color: $black, $alpha: 0.2);
+    background: linear-gradient(to bottom, $lightBlue, $blue);
+    border: 1rem solid white;
+    margin: 2rem auto;
+    height: min(60vw,15rem);
+    width: min(80vw, 20rem);
+    position: relative;
+} */
+/* .s {
+}
+&1 {
+    padding-top: 7rem;
+    background: $black;
+    color: white;
+}
+&2 {
+    padding: 5rem 0;
+}
+&3 {
+    background: $black;
+    color: white;
+} */
+@media screen and (max-width: 1023px) {
+  .header {
+    position: static;
+  }
+  .servico {
+    display: flex;
+    flex-direction: column;
+  }
+  .servico:first-of-type {
+    margin-top: clamp(3.7rem,15vw,15vh,4rem);
+  }
+  .servico__wrap {
+    margin: auto;
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .servico {
+    padding: 5%;
+  }
+  .servico:first-of-type {
+    margin-top: 7rem;
+  }
+  .servico__wrap {
+    width: min(80%,60ch);
+  }
+}
+/*# sourceMappingURL=details.module.css.map */

@@ -26,17 +26,16 @@ const social = [
   },
 ]
 
-function Contatos() {
-  const map = social.map(({ content, href, d, viewBox }, index) => {
-    return (
-      <a key={index} href={href} className={info}>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox={viewBox}>
-          <path d={d} />
-        </svg>
-        <p>{content}</p>
-      </a>
-    )
-  })
+export const Contatos = () => {
+  const map = social.map(({ content, href, d, viewBox }, index) => (
+    <a key={index} href={href} className={info}>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox={viewBox}>
+        <path d={d} />
+      </svg>
+      <p>{content}</p>
+    </a>
+  ))
+
   return (
     <section className={contato} id='contato'>
       <img
@@ -84,5 +83,3 @@ function Contatos() {
     </section>
   )
 }
-
-export default Contatos

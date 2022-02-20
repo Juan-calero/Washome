@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/Components/1.Header/header.module.scss"
+    ],
+    "names": [],
+    "file": "header.module.css"
+}

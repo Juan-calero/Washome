@@ -1,49 +1,56 @@
 import React from "react"
-import Facebook from "../../img/facebook.png"
-import Olx from "../../img/olx.png"
-import Insta from "../../img/insta.png"
 import Logo from "../../img/washomeLogoWhite.png"
-import { footer, logo, social } from "./footer.module.scss"
+import styled from "styled-components"
+import { lightBlue } from "../Utils/tokens"
+import { SocialIcons } from "../common/social-icons"
 
-const socialArr = [
-  {
-    alt: "Olx",
-    src: Olx,
-    href: "https://www.olx.pt/d/anuncio/washome-limpeza-profissional-de-carpetes-tapetes-sofs-colches-IDv4lsE.html#cfb5ec5567",
-  },
-  {
-    alt: "Facebook",
-    src: Facebook,
-    href: "https://www.facebook.com/washomelimpezaconforto.washome",
-  },
-  {
-    alt: "Instagram",
-    src: Insta,
-    href: "https://www.instagram.com/washome_limpezas/",
-  },
-]
+export const Footer = () => (
+  <StyledFooter>
+    <StyledLogo
+      loading='lazy'
+      src={Logo}
+      alt='Logotipo Washome - Limpeza Têxtil Profissional'
+    />
+    <SocialIcons />
+    <p>Washome® 2021 | Todos os Direitos Reservados</p>
+  </StyledFooter>
+)
 
-function Footer() {
-  const items = socialArr.map(({ src, alt, href }, index) => {
-    return (
-      <a key={index} href={href} target='_blank' rel='noopener noreferrer'>
-        <img loading='lazy' src={src} alt={alt} />
-      </a>
-    )
-  })
+const StyledLogo = styled.img`
+  @media screen and (max-width: 1023px) {
+    width: min(90%, 17rem);
+    margin: auto;
+  }
 
-  return (
-    <footer className={footer}>
-      <img
-        loading='lazy'
-        className={logo}
-        src={Logo}
-        alt='Logotipo Washome - Limpeza Têxtil Profissional'
-      />
-      <nav className={social}>{items}</nav>
-      <p>Washome® 2021 | Todos os Direitos Reservados</p>
-    </footer>
-  )
-}
+  @media screen and (min-width: 1024px) {
+    height: 6rem;
+  }
+`
 
-export default Footer
+const StyledFooter = styled.footer`
+  position: relative;
+  z-index: 1;
+  display: flex;
+  background: ${lightBlue};
+  color: white;
+  padding: 2rem 0.5rem;
+  justify-content: space-between;
+  & p {
+    position: absolute;
+    bottom: 1rem;
+    width: 90%;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 2rem 0.5rem 4rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+`

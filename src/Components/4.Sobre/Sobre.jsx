@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react"
-import Remate from "../../img/Untitled-1.png"
 import Extrator from "../../img/Extrator.png"
 import Cleaner from "../../img/Cleaner.png"
 import {
   cleaner,
   sobre,
-  remate,
   extrator,
   textbox,
   title,
@@ -34,7 +32,6 @@ function Sobre() {
   }, [])
   return (
     <section className={sobre} id='sobre'>
-      <img className={remate} src={Remate} alt='' />
       <img
         loading='lazy'
         className={`${isScrolled ? extrator__scrolled : ""} ${extrator}`}

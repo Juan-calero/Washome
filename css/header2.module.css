@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+  color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+h1 {
+  font-size: min(10vw, 3rem);
+  color: #2b487d;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2vw, 2rem);
+}
+
+p,
+a {
+  font-size: clamp(1rem, 1.25vw,1.25rem);
+}
+
+p {
+  width: min(100%,60ch);
+}
+
+textarea {
+  resize: none;
+}
+
+.btn__blue {
+  background: #557bb5;
+  margin: 1rem auto;
+  padding: 0.8rem;
+  color: white;
+  border: 0;
+  border-radius: 25px;
+}
+
+.btn__blue:hover, .btn__blue:focus {
+  background: #2b487d;
+}
+
+@media screen and (min-width: 2100px) {
+  html {
+    font-size: 2rem;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  right: 0;
+  height: clamp(3.7rem,15vw,15vh,4rem);
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 0.1rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .header {
+    background: #557bb5;
+    width: 100%;
+    padding-left: 0.5rem;
+  }
+  .logo {
+    height: 70%;
+  }
+  .menu {
+    z-index: 4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+  .menu::before {
+    content: "";
+    background: #363636;
+    z-index: -1;
+    opacity: 0.3;
+    width: 100vw;
+    height: 100vh;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background: #363636;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+  }
+  .burger {
+    cursor: pointer;
+    fill: white;
+    height: 100%;
+    width: auto;
+  }
+  .nav svg {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 3.5rem;
+  }
+  .nav li {
+    font-size: min(4vw,1.5rem);
+  }
+  .list {
+    margin: auto;
+    padding: 0;
+    font-size: 1.25rem;
+  }
+  .list li {
+    margin-bottom: max(3vh, 1.5rem);
+  }
+  .deskNav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    width: 100%;
+    position: absolute;
+    min-height: 5rem;
+    height: 7rem;
+    max-height: 7rem;
+    padding: 3vh 0;
+    padding-left: 1rem;
+    background: #faebd7;
+  }
+  .logo {
+    filter: brightness(0%);
+    width: 10rem;
+  }
+  .burger,
+  .menu {
+    display: none;
+  }
+  .deskNav {
+    background: transparent;
+  }
+  .deskList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .deskList li a {
+    font-size: 1rem;
+    color: black;
+  }
+  .deskList li a:hover, .deskList li a:focus {
+    border-bottom: 2px solid #363636;
+  }
+  .deskList li {
+    margin-right: 2vw;
+  }
+}
+/*# sourceMappingURL=header2.module.css.map */

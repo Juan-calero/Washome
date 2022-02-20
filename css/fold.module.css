@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+html ul {
+  list-style-type: none;
+}
+
+html a {
+  text-decoration: none;
+  color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body,
+html {
+  margin: 0;
+}
+
+h1 {
+  font-size: min(10vw, 3rem);
+  color: #2b487d;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2vw, 2rem);
+}
+
+p,
+a {
+  font-size: clamp(1rem, 1.25vw,1.25rem);
+}
+
+p {
+  width: min(100%,60ch);
+}
+
+textarea {
+  resize: none;
+}
+
+.btn__blue {
+  background: #557bb5;
+  margin: 1rem auto;
+  padding: 0.8rem;
+  color: white;
+  border: 0;
+  border-radius: 25px;
+}
+
+.btn__blue:hover, .btn__blue:focus {
+  background: #2b487d;
+}
+
+@media screen and (min-width: 2100px) {
+  html {
+    font-size: 2rem;
+  }
+}
+
+.fold {
+  background: url(../../img/carpet-cleaning.png);
+  background-size: cover;
+  min-height: max(95vh, 25rem);
+  position: relative;
+  display: flex;
+}
+
+.fold svg {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: all 0.1s;
+  fill: #2b487d;
+}
+
+.text {
+  z-index: 1;
+  font-weight: 900;
+  margin: auto;
+}
+
+.text h3 {
+  font-size: min(6vw, 1.7rem);
+  color: #557bb5;
+  margin: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .fold svg {
+    width: 3rem;
+  }
+  .bigbubble,
+  .smallbubble {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .fold svg {
+    width: 2.5rem;
+  }
+  .fold svg:hover, .fold svg:focus {
+    box-sizing: content-box;
+    border-radius: 25px;
+    padding: 5px;
+    border: 2px solid #2b487d;
+    width: calc(min(6%,1.6rem) + 5px);
+  }
+  .bigbubble {
+    position: absolute;
+    right: clamp(1rem, 13%, 60rem);
+    bottom: 35%;
+    width: clamp(7rem, 40vw, 15rem);
+  }
+  .smallbubble {
+    position: absolute;
+    left: clamp(1rem, 70%, 30rem);
+    bottom: 27%;
+    width: clamp(2.5rem, 20vw, 5rem);
+  }
+}
+/*# sourceMappingURL=fold.module.css.map */

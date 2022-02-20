@@ -2,8 +2,7 @@
 
 .servicos {
     overflow: hidden;
-    background: $black;
-    color: white;
+    color: $black;
     padding: 2rem 5%;
     min-height: 60vh;
     display: flex;
@@ -12,12 +11,11 @@
     & h2 {
         font-weight: 900;
         width: #{"min(100%,33ch)"};
-        color: white;
     }
 }
 .frame {
     background: linear-gradient(to bottom, $lightBlue, $blue);
-    outline: 1rem solid white;
+    outline: 1rem solid $black;
     position: relative;
     margin: 2rem auto;
     height: #{"min(60vw,15rem)"};
@@ -62,7 +60,7 @@
     height: #{"min(20vw,2.7rem)"};
     border: none;
     background: $brown;
-    color: white;
+    color: $black;
     border-radius: 25px;
     margin: 1rem 0;
     font-size: 1.2rem;
@@ -72,9 +70,9 @@
     }
 }
 .unactive {
-    border: 1px solid white;
+    border: 1px solid $black;
     background: transparent;
-    color: white;
+    color: $black;
     &:hover,
     &:focus {
         border-color: $lightBlue;
@@ -82,9 +80,9 @@
     }
 }
 .active {
-    color: $lightBlue;
-    border: 1px solid white;
-    background: white;
+    color: $white;
+    border: 1px solid $blue;
+    background: $blue;
 }
 
 @media screen and (max-width: 1023px) {
