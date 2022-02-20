@@ -1,22 +1,36 @@
 import React from "react"
-import { bigbubble, smallbubble, fold, text } from "./fold.module.scss"
-import BigBubble from "../../img/Bluebubble.png"
-import SmallBubble from "../../img/Brownbubble.png"
+import FoldBg from "../../img/carpet-cleaning.png"
+import styled from "styled-components"
+import { lightBlue } from "../Utils/tokens"
+import { ArrowButton } from "./arrow-button"
 
-function Fold() {
-  return (
-    <section className={fold}>
-      <div className={text}>
-        <h1>LIMPEZA TÊXTIL</h1>
-        <h3>Carpetes. Sofás. Colchões.</h3>
-      </div>
-      <a href='#servico'>
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
-          <path d='M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm0 14.414l-5.707-5.707l1.414-1.414L12 13.586l4.293-4.293l1.414 1.414L12 16.414z' />
-        </svg>
-      </a>
-    </section>
-  )
-}
+export const Fold = () => (
+  <StyledFold>
+    <StyledCopy>
+      <Headline>LIMPEZA TÊXTIL</Headline>
+      <Subline>Carpetes. Sofás. Colchões.</Subline>
+    </StyledCopy>
+    <ArrowButton />
+  </StyledFold>
+)
 
-export default Fold
+const StyledFold = styled.section`
+  background: url(${FoldBg});
+  background-size: cover;
+  min-height: max(95vh, 25rem);
+  position: relative;
+  display: flex;
+`
+const StyledCopy = styled.div`
+  z-index: 1;
+  font-weight: 900;
+  margin: auto;
+`
+
+const Headline = styled.h1``
+
+const Subline = styled.h3`
+  font-size: min(6vw, 1.7rem);
+  color: ${lightBlue};
+  margin: 0;
+`

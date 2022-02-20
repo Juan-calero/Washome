@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { testemunhos, cardsnav, line, active2 } from "./testemunhos.module.scss"
+import { line, active2 } from "./testemunhos.module.scss"
 import { Empresas } from "./empresas"
 import { testemunhosArr } from "../Utils/Arrays"
 import { Carousel } from "./Carousel"

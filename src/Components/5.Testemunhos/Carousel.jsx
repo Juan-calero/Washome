@@ -1,5 +1,4 @@
 import React from "react"
-import { nav } from "./testemunhos.module.scss"
 import styled from "styled-components"
 import { testemunhosArr } from "../Utils/Arrays"
 import { black, white } from "../Utils/tokens"
@@ -10,11 +9,11 @@ export const Carousel = ({ testemunho }) => (
       {testemunhosArr.map(({ name, content }, index) => (
         <CarouselItem key={index}>
           <p children={<i>{name}</i>} />
-          <Content>
+          <div>
             {content.map((e, index) => (
               <Paragraph key={index} children={e} />
             ))}
-          </Content>
+          </div>
         </CarouselItem>
       ))}
     </InnerCarousel>
@@ -46,11 +45,11 @@ const InnerCarousel = styled.div`
 const CarouselItem = styled.div`
   color: ${black};
   padding: 1rem 2rem;
-  box-shadow: 0px 0px 12px rgba($color: ${black}, $alpha: 0.3);
+  box-shadow: 2px 2px 7px ${black};
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid ${white};
-  border-radius: 25px;
+  border-radius: 12px;
   background: ${white};
   @media screen and (max-width: 1023px) {
     min-width: min(80vw, 24rem);
@@ -70,5 +69,3 @@ const Paragraph = styled.div`
     font-size: 1rem;
   }
 `
-
-const Content = styled.div``
