@@ -2,6 +2,7 @@
 export const black = "#363636"
 export const white = "#fff"
 export const lightestGrey = "#f7f7f7"
+export const petrol = "#aaa"
 export const brown = "#c99964"
 export const pastel = "#faebd7"
 export const blue = "#2b487d"

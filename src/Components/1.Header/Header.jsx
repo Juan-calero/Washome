@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { TopBanner } from "./top-banner"
 import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
 import { BottomBanner } from "./bottom-banner"
+import { petrol } from "../Utils/tokens"
 
 export const Header = () => {
   const { isSmallScreen } = useIsSmallScreen()
@@ -24,4 +25,5 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   background: white;
+  box-shadow: 0px 0px 15px ${petrol};
 `
