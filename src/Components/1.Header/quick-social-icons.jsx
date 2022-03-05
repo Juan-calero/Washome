@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react"
 
 import { SpaceS, SpaceM } from "../Utils/tokens"
 
-const QUICKCONTACTS = [
+const QUICKSOCIALICONS = [
   {
     href: "https://www.facebook.com/washomelimpezaconforto.washome",
     icon: "brandico:facebook-rect",
@@ -21,8 +21,8 @@ const QUICKCONTACTS = [
 
 export const QuickSocialIcons = () => (
   <StyledQuickContact>
-    {QUICKCONTACTS.map(({ href, icon }) => (
-      <Item {...{ href }} rel='noreferrer noopener' target='_blank'>
+    {QUICKSOCIALICONS.map(({ href, icon }) => (
+      <Item {...{ href, key: href }} rel='noreferrer noopener' target='_blank'>
         <Icon {...{ icon }} width={SpaceM} height={SpaceM} />
       </Item>
     ))}

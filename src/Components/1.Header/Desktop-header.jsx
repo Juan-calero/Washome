@@ -5,39 +5,29 @@ import "../../main.scss"
 import { Link } from "react-router-dom"
 
 export const DesktopHeader = () => (
-  <DesktopWrapper>
-    <DesktopList>
-      <li children={<Link to='/servicos'>Serviços</Link>} />
-      <li children={<a href='#sobre'>Sobre</a>} />
-      <li children={<a href='#testemunhos'>Testemunhos</a>} />
-      <a href='#contato' className='btn__blue'>
-        Fale Connosco
-      </a>
-    </DesktopList>
-  </DesktopWrapper>
+  <DesktopList>
+    <li children={<Link to='/servicos'>Serviços</Link>} />
+    <li children={<a href='#sobre'>Sobre</a>} />
+    <li children={<a href='#testemunhos'>Testemunhos</a>} />
+    <a href='#contato' className='btn__blue'>
+      Fale Connosco
+    </a>
+  </DesktopList>
 )
 
-const DesktopWrapper = styled.div`
-  @media screen and (max-width: 1023px) {
-    display: none;
-  }
-`
-
 const DesktopList = styled.ul`
-  @media screen and (min-width: 1024px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & li a {
-      font-size: 1rem;
-      color: ${lightBlue};
-      &:hover,
-      &:focus {
-        border-bottom: 2px solid ${lightBlue};
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & li a {
+    font-size: 1rem;
+    color: ${lightBlue};
+    &:hover,
+    &:focus {
+      border-bottom: 2px solid ${lightBlue};
     }
-    & li {
-      margin-right: 2vw;
-    }
+  }
+  & li {
+    margin-right: 2vw;
   }
 `

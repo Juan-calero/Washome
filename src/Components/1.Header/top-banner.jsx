@@ -1,23 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 
-import { lightBlue, SpaceXL, SizeXL } from "../Utils/tokens"
-import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
+import { lightBlue, SpaceXL, SizeXL, SpaceXS } from "../Utils/tokens"
 import { QuickContact } from "./quick-contact"
 import { QuickSocialIcons } from "./quick-social-icons"
 
-export const TopBanner = () => {
-  const { isSmallScreen } = useIsSmallScreen()
-
-  return (
-    <StyledTopBanner>
-      <Wrapper>
-        <QuickContact {...{ isSmallScreen }} />
-        <QuickSocialIcons size='small' />
-      </Wrapper>
-    </StyledTopBanner>
-  )
-}
+export const TopBanner = ({ isSmallScreen }) => (
+  <StyledTopBanner>
+    <Wrapper>
+      <QuickContact {...{ isSmallScreen }} />
+      <QuickSocialIcons size='small' />
+    </Wrapper>
+  </StyledTopBanner>
+)
 
 const StyledTopBanner = styled.header`
   display: flex;
@@ -33,4 +28,5 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: min(100%, ${SizeXL});
+  padding: 0 ${SpaceXS};
 `

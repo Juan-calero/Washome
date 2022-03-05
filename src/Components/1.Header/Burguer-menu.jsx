@@ -46,69 +46,54 @@ export const BurguerMenu = () => {
 }
 
 const Burguer = styled.svg`
-  @media screen and (max-width: 1023px) {
-    cursor: pointer;
-    fill: black;
-    height: 100%;
-    width: auto;
-  }
-  @media screen and (min-width: 1024px) {
-    display: none;
-  }
+  cursor: pointer;
+  fill: black;
+  height: 100%;
+  width: auto;
 `
 
 const MenuModal = styled.div`
-  @media screen and (max-width: 1023px) {
-    z-index: 4;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  display: flex;
+  &::before {
+    content: "";
+    background: $black;
+    z-index: -1;
+    opacity: 0.3;
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    &::before {
-      content: "";
-      background: $black;
-      z-index: -1;
-      opacity: 0.3;
-      width: 100vw;
-      height: 100vh;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    display: none;
   }
 `
 const MenuNav = styled.nav`
-  @media screen and (max-width: 1023px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  background: ${black};
+  right: 0;
+  width: 60%;
+  height: 100%;
+  z-index: 1;
+  & svg {
     position: absolute;
-    background: ${black};
-    right: 0;
-    width: 60%;
-    height: 100%;
-    z-index: 1;
-    & svg {
-      position: absolute;
-      top: 0.2rem;
-      right: 0.2rem;
-      width: 3.5rem;
-    }
-    & li {
-      font-size: min(4vw, 1.5rem);
-    }
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 3.5rem;
+  }
+  & li {
+    font-size: min(4vw, 1.5rem);
   }
 `
 const List = styled.ul`
-  @media screen and (max-width: 1023px) {
-    margin: auto;
-    padding: 0;
-    font-size: 1.25rem;
-    & li {
-      margin-bottom: max(3vh, 1.5rem);
-    }
+  margin: auto;
+  padding: 0;
+  font-size: 1.25rem;
+  & li {
+    margin-bottom: max(3vh, 1.5rem);
   }
 `

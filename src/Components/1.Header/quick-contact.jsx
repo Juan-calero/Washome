@@ -25,9 +25,9 @@ const QUICKCONTACTS = [
 export const QuickContact = ({ isSmallScreen }) => (
   <StyledQuickContact>
     {QUICKCONTACTS.map(({ href, icon, text }) => (
-      <Item {...{ href }}>
-        <StyledIcon {...{ icon }} />
-        {!isSmallScreen && <p {...{ children: text }} />}
+      <Item {...{ href, key: href }}>
+        <Icon {...{ icon }} />
+        {!isSmallScreen && <StyledText {...{ children: text }} />}
       </Item>
     ))}
   </StyledQuickContact>
@@ -44,6 +44,6 @@ const Item = styled.a`
   margin: 0 ${SpaceS};
 `
 
-const StyledIcon = styled(Icon)`
-  margin-right: ${SpaceXS};
+const StyledText = styled.p`
+  margin-left: ${SpaceXS};
 `
