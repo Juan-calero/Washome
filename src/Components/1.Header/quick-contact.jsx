@@ -16,7 +16,7 @@ const QUICKCONTACTS = [
     icon: "ant-design:phone-filled",
   },
   {
-    text: "Grande Lisboa, Cascais e Margem Sul",
+    text: "Grande Lisboa e Margem Sul",
     href: null,
     icon: "carbon:location-filled",
   },

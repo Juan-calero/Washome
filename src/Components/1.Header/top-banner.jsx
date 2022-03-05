@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-import { SocialIcons } from "../common/social-icons"
 import { lightBlue, SpaceXL, SizeXL } from "../Utils/tokens"
 import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
 import { QuickContact } from "./quick-contact"
+import { QuickSocialIcons } from "./quick-social-icons"
 
 export const TopBanner = () => {
   const { isSmallScreen } = useIsSmallScreen()
@@ -13,7 +13,7 @@ export const TopBanner = () => {
     <StyledTopBanner>
       <Wrapper>
         <QuickContact {...{ isSmallScreen }} />
-        <SocialIcons size='small' />
+        <QuickSocialIcons size='small' />
       </Wrapper>
     </StyledTopBanner>
   )

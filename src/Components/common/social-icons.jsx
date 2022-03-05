@@ -44,7 +44,9 @@ const StyledSocialIcons = styled.nav`
     $size === "small" &&
     css`
       margin: 0;
-      height: 12px;
-      width: 12px;
+      & img {
+        width: 32px;
+        cursor: pointer;
+      }
     `}
 `
