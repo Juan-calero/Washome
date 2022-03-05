@@ -70,56 +70,6 @@ textarea {
   }
 }
 
-.extrator {
-  transition: transform 1.5s ease-in-out;
-  visibility: visible;
-  position: absolute;
-  top: 19vw;
-  left: 0%;
-  height: 80px;
-  z-index: 1;
-  transform: translateX(0);
-}
-
-.extrator__scrolled {
-  transform: translateX(100vw);
-}
-
-.title {
-  position: absolute;
-  overflow: hidden;
-  height: 80px;
-  width: 0;
-  transition: all 1.5s ease-in-out;
-  top: 19vw;
-  left: 0%;
-}
-
-.title__scrolled {
-  width: 100vw;
-}
-
-.titletext {
-  margin: 20px 0;
-  text-align: center;
-  width: 100vw;
-  font-size: min(10vw,2rem);
-  color: #2b487d;
-}
-
-.titletext::before {
-  position: absolute;
-  content: "";
-  top: 0%;
-  right: 0;
-  left: 0;
-  bottom: 0%;
-  background: white;
-  opacity: 0.3;
-  mix-blend-mode: overlay;
-  width: 100%;
-}
-
 @media screen and (max-width: 749px) {
   .cleaner {
     display: none;
@@ -136,33 +86,7 @@ textarea {
   }
 }
 
-@media screen and (max-width: 1023px) {
-  .remate {
-    display: none;
-  }
-}
-
 @media screen and (min-width: 1024px) {
-  .remate {
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    z-index: 300;
-  }
-  .extrator {
-    top: 20%;
-    height: 15%;
-  }
-  .title {
-    height: 15%;
-    top: 20%;
-  }
-  .titletext {
-    margin: 40px 0;
-    width: 100vw;
-    font-size: 3rem;
-  }
   .cleaner {
     right: 8%;
   }

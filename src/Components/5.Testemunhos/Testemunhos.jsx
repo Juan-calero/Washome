@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from "react"
-import { line, active2 } from "./testemunhos.module.scss"
+import React from "react"
 import { Empresas } from "./empresas"
 import { testemunhosArr } from "../Utils/Arrays"
 import { Carousel } from "./Carousel"
-import styled from "styled-components"
-import { lightestGrey, white } from "../Utils/tokens"
+import styled, { css } from "styled-components"
+import { lightestGrey, white, blue } from "../Utils/tokens"
 import { MyBusinessIcon } from "./my-business-icon"
 
 export const Testemunhos = () => {
-  const [testemunho, setTestemunho] = useState(0)
+  const [testemunho, setTestemunho] = React.useState(0)
 
   //REFACTOR THIS
-  useEffect(() => {
+  React.useEffect(() => {
     const slideInterval = setInterval(
       () => setTestemunho((prevState) => (prevState + 1) % 4),
       6000
@@ -24,15 +23,14 @@ export const Testemunhos = () => {
       <Carousel {...{ testemunho }} />
       <StyledCardNavigator>
         {testemunhosArr.map((_, index) => (
-          <button
+          <StyledTestemunhosButton
+            $isActive={index === testemunho}
             key={index}
             onClick={() => setTestemunho(index)}
-            className={`${index === testemunho ? active2 : ""} ${line}`}
           />
         ))}
       </StyledCardNavigator>
       <MyBusinessIcon />
-
       <Empresas />
     </StyledTestemunhos>
   )
@@ -58,5 +56,46 @@ const StyledCardNavigator = styled.nav`
   justify-content: center;
   @media screen and (min-width: 1024px) {
     margin: 2% 10%;
+  }
+`
+
+const StyledTestemunhosButton = styled.button`
+  ${({ $isActive }) =>
+    $isActive
+      ? css`
+          width: 4rem;
+          &::after {
+            height: 0.4rem;
+            background: ${blue};
+          }
+        `
+      : css`
+          width: 3rem;
+          &::after {
+            height: 0.25rem;
+            background: ${white};
+          }
+        `}
+
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+  margin: 0.2rem;
+  transition: all 0.2s ease;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    pointer-events: none;
+  }
+  &:hover,
+  &:focus {
+    width: 4rem;
   }
 `

@@ -64,12 +64,6 @@ textarea {
   background: #2b487d;
 }
 
-@media screen and (min-width: 2100px) {
-  html {
-    font-size: 2rem;
-  }
-}
-
 .header {
   position: fixed;
   top: 0%;

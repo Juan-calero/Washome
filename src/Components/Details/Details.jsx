@@ -1,9 +1,10 @@
 import React from "react"
-import { ServicoImg, servico, servico__wrap } from "./details.module.scss"
-import { frame, activeImg } from "../3.Servicos/servicos.module.scss"
 import Colchão from "../../img/ServicosMatress.png"
 import Carpete from "../../img/ServicosCarpet.png"
 import Sofa from "../../img/ServicosCouch.png"
+
+import { black, lightBlue, blue, white, pastel, brown } from "../Utils/tokens"
+import styled from "styled-components"
 
 const DetailsItems = [
   {
@@ -43,35 +44,95 @@ const DetailsItems = [
   },
 ]
 
-function Details() {
-  const mapItems = DetailsItems.map(({ title, text, note, image }, index) => {
-    return (
-      <section key={index} class={servico}>
-        <div class={servico__wrap}>
-          <h2 class='servico__title'>{title}</h2>
-          {text.map((paragraph, index) => {
-            return (
-              <p key={index} class='servico__text'>
-                {paragraph}
-              </p>
-            )
-          })}
-          {note.map((note, index) => {
-            return (
-              <h3 key={index} class='servico__text--note'>
-                {note}
-              </h3>
-            )
-          })}
-        </div>
-        <div class={frame}>
-          <img class={activeImg} src={image} alt={title} />
-        </div>
-      </section>
-    )
-  })
+export const Details = () => (
+  <React.Fragment>
+    {DetailsItems.map(({ title, text, note, image }, key) => (
+      <StyledServico {...{ key }}>
+        <Wrapper>
+          <h2 children={title} />
+          {text.map((paragraph, key) => (
+            <p {...{ key }} children={paragraph} />
+          ))}
+          {note.map((note, key) => (
+            <h3 {...{ key }} children={note} />
+          ))}
+        </Wrapper>
+        <StyledFrame children={<img src={image} alt={title} />} />
+      </StyledServico>
+    ))}
+  </React.Fragment>
+)
 
-  return <React.Fragment>{mapItems}</React.Fragment>
-}
+const StyledServico = styled.section`
+  position: relative;
+  padding: 5% 0;
+  min-height: 70vh;
+  overflow: hidden;
+  background: ${black};
+  color: ${white};
+  display: flex;
+  align-items: center;
+  &:nth-child(odd) {
+    padding: 5rem 0;
+    background: ${pastel};
+    color: ${black};
+  }
 
-export default Details
+  @media screen and (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    &:first-of-type {
+      margin-top: clamp(3.7rem, 15vw, 15vh, 4rem);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 5%;
+    &:first-of-type {
+      margin-top: 7rem;
+    }
+  }
+`
+
+const Wrapper = styled.div`
+  margin: auto;
+  width: min(90%, 60ch);
+  & h2,
+  & h3 {
+    color: ${brown};
+  }
+  @media screen and (max-width: 1023px) {
+    margin: auto;
+    order: 3;
+  }
+  @media screen and (min-width: 1024px) {
+    width: min(80%, 60ch);
+  }
+`
+
+const StyledFrame = styled.div`
+  background: linear-gradient(to bottom, ${lightBlue}, ${blue});
+  outline: 1rem solid ${black};
+  position: relative;
+  margin: 2rem auto;
+  height: min(60vw, 15rem);
+  width: min(80vw, 20rem);
+  & img {
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    right: 0;
+    width: 130%;
+  }
+  @media screen and (max-width: 1023px) {
+    height: min(60vw, 21rem);
+    width: min(80vw, 28rem);
+    & img {
+      bottom: -15%;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    order: 2;
+    height: 15rem;
+    width: 20rem;
+  }
+`

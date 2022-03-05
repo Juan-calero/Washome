@@ -1,18 +1,3 @@
-import Colchão from "../../img/ServicosMatress.png"
-import Sofa from "../../img/ServicosCouch.png"
-import Carpete from "../../img/ServicosCarpet.png"
-
-export const images = [
-  { alt: "colchão 3D", src: Colchão },
-  { alt: "Sofá 3D", src: Sofa },
-  { alt: "Carpete 3D", src: Carpete },
-]
-export const SERVICOS = [
-  "Sendo os colchões fundamentais ao descanso e recuperação de energias, não deixe que os mesmos acumulem sujidade e desagradáveis odores. Elimine os ácaros que provocam alergias e irritações cutâneas.",
-  "Sofás e maples são peças dos nossos lares fundamentais ao laser e descanso e com os quais, todos os dias, contactamos fisicamente.Conte connosco para contribuirmos para o seu maior conforto.",
-  "O nosso método de limpeza de Tapetes, Carpetes e Alcatifas extrai todo o pó e ácaros entranhados nas fibras têxteis, removendo também o enegrecimento, manchas e nódoas.",
-]
-
 export const testemunhosArr = [
   {
     name: "Natalia Gomes",

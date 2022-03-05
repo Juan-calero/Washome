@@ -40,8 +40,8 @@ const StyledSocialIcons = styled.nav`
     width: 3rem;
     cursor: pointer;
   }
-  ${({ size }) =>
-    size === "small" &&
+  ${({ $size }) =>
+    $size === "small" &&
     css`
       margin: 0;
       height: 12px;

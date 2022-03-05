@@ -26,18 +26,18 @@ html {
 }
 
 h1 {
-    font-size: #{"min(10vw, 3rem)"};
+    font-size: 3rem;
     color: $blue;
     margin: 0;
 }
 
 h2 {
-    font-size: #{"clamp(1.75rem, 2vw, 2rem)"};
+    font-size: 1.75rem;
 }
 
 p,
 a {
-    font-size: #{"clamp(1rem, 1.25vw,1.25rem)"};
+    font-size: 1rem;
 }
 p {
     width: #{"min(100%,60ch)"};
@@ -59,10 +59,5 @@ textarea {
         &:focus {
             background: $blue;
         }
-    }
-}
-@media screen and (min-width: 2100px) {
-    html {
-        font-size: 2rem;
     }
 }

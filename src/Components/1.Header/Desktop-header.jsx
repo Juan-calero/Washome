@@ -2,11 +2,12 @@ import * as React from "react"
 import styled from "styled-components"
 import { lightBlue } from "../Utils/tokens"
 import "../../main.scss"
+import { Link } from "react-router-dom"
 
 export const DesktopHeader = () => (
   <DesktopWrapper>
     <DesktopList>
-      <li children={<a href='#servico'>Serviços</a>} />
+      <li children={<Link to='/servicos'>Serviços</Link>} />
       <li children={<a href='#sobre'>Sobre</a>} />
       <li children={<a href='#testemunhos'>Testemunhos</a>} />
       <a href='#contato' className='btn__blue'>
