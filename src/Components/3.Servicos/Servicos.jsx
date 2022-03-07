@@ -8,6 +8,8 @@ import Carpete from "../../img/ServicosCarpet.png"
 import { ServicoButton } from "./servico-button"
 import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
 import { LayoutWrapper } from "../Utils/LayoutWrapper"
+import { Frame } from "./frame"
+import { css } from "styled-components"
 
 export const SERVICOS = {
   colchoes: {
@@ -33,21 +35,18 @@ export const SERVICOS = {
 
 export const Servicos = () => {
   const [service, setService] = React.useState("colchoes")
-  const isSmallScreen = useIsSmallScreen()
+  const { isSmallScreen } = useIsSmallScreen()
 
   return (
     <LayoutWrapper width={SizeXXL}>
-      <StyledServicos id='servico'>
-        {!isSmallScreen && <h2 children={"SERVIÇOS"} />}
-        <StyledFrame>
-          <img
-            src={SERVICOS[service].image.src}
-            alt={SERVICOS[service].image.alt}
-            loading='lazy'
-          />
-        </StyledFrame>
-        <Wrapper>
-          {isSmallScreen && <h2 children={"SERVIÇOS"} />}
+      <StyledServicos {...{ isSmallScreen }} id='servico'>
+        <Frame
+          {...{ isSmallScreen }}
+          src={SERVICOS[service].image.src}
+          alt={SERVICOS[service].image.alt}
+        />
+        <Wrapper {...{ isSmallScreen }}>
+          <h2 children={"SERVIÇOS"} />
           <nav>
             <ServicoButton {...{ service, setService }} type='colchoes' />
             <ServicoButton {...{ service, setService }} type='sofas' />
@@ -75,38 +74,12 @@ const StyledServicos = styled.section`
     font-weight: 900;
     width: min(100%, 33ch);
   }
-  @media screen and (max-width: 1023px) {
-    flex-direction: column;
-    justify-content: space-between;
-  }
-`
-
-const StyledFrame = styled.div`
-  background: linear-gradient(to bottom, ${lightBlue}, ${blue});
-  outline: 1rem solid ${black};
-  position: relative;
-  margin: 2rem auto;
-  height: min(60vw, 15rem);
-  width: min(80vw, 20rem);
-  & img {
-    position: absolute;
-    bottom: -20%;
-    left: 0;
-    right: 0;
-    width: 130%;
-  }
-  @media screen and (max-width: 1023px) {
-    height: min(60vw, 21rem);
-    width: min(80vw, 28rem);
-    & img {
-      bottom: -15%;
-    }
-  }
-  @media screen and (min-width: 1024px) {
-    order: 2;
-    height: 15rem;
-    width: 20rem;
-  }
+  ${({ isSmallScreen }) =>
+    isSmallScreen &&
+    css`
+      flex-direction: column;
+      justify-content: space-between;
+    `}
 `
 
 const Wrapper = styled.div`
@@ -125,17 +98,20 @@ const Wrapper = styled.div`
   & p {
     margin: 1rem 0;
   }
-  @media screen and (max-width: 1023px) {
-    & nav button {
-      margin-top: 1rem;
-      margin-right: 0.5rem;
-    }
-  }
-  @media screen and (min-width: 1024px) {
-    & nav button {
-      margin: 1rem 1rem 1rem 0;
-    }
-  }
+
+  ${({ isSmallScreen }) =>
+    isSmallScreen
+      ? css`
+          & nav button {
+            margin-top: 1rem;
+            margin-right: 0.5rem;
+          }
+        `
+      : css`
+          & nav button {
+            margin: 1rem 1rem 1rem 0;
+          }
+        `}
 `
 
 const Button = styled.button`

@@ -1,14 +1,7 @@
 import React from "react"
 import FoldBg from "../../img/carpet-cleaning.png"
 import styled from "styled-components"
-import {
-  white,
-  ZIndexMiddle,
-  ZIndexBackground,
-  SizeL,
-  SizeM,
-} from "../Utils/tokens"
-import { ArrowButton } from "./arrow-button"
+import { white, ZIndexMiddle, ZIndexBackground, SizeM } from "../Utils/tokens"
 import { ContactForm } from "../6.Contatos/contact-form"
 import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
 import { LayoutWrapper } from "../Utils/LayoutWrapper"
