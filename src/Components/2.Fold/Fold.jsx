@@ -1,46 +1,50 @@
 import React from "react"
 import FoldBg from "../../img/carpet-cleaning.png"
 import styled from "styled-components"
-import { white, ZIndexMiddle, ZIndexBackground } from "../Utils/tokens"
+import {
+  white,
+  ZIndexMiddle,
+  ZIndexBackground,
+  SizeL,
+  SizeM,
+} from "../Utils/tokens"
 import { ArrowButton } from "./arrow-button"
 import { ContactForm } from "../6.Contatos/contact-form"
 import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
+import { LayoutWrapper } from "../Utils/LayoutWrapper"
 
 export const Fold = () => {
-  const isSmallScreen = useIsSmallScreen()
+  const { isSmallScreen } = useIsSmallScreen()
 
   return (
-    <StyledFold>
-      <CenterWrapper>
+    <LayoutWrapper>
+      <StyledFold>
         <StyledCopy>
           <h1>LIMPEZA TÊXTIL</h1>
           <Subline>Carpetes. Sofás. Colchões.</Subline>
         </StyledCopy>
         <ContactFormWrapper>
-          <ContactForm />
+          {!isSmallScreen && <ContactForm />}
         </ContactFormWrapper>
-      </CenterWrapper>
-    </StyledFold>
+      </StyledFold>
+    </LayoutWrapper>
   )
 }
 
-const CenterWrapper = styled.div`
+const ContactFormWrapper = styled.div`
+  width: ${SizeM};
+  background: white;
+`
+
+const StyledFold = styled.section`
   width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-`
 
-const ContactFormWrapper = styled.div`
-  background: white;
-`
-
-const StyledFold = styled.section`
   background: url(${FoldBg}) left bottom/cover no-repeat;
   height: 700px;
-  max-width: 1500px;
-  display: flex;
   position: relative;
   z-index: ${ZIndexBackground};
   &::after {

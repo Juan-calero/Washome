@@ -23,5 +23,7 @@ export const SpaceL = "24px"
 export const SpaceXL = "32px"
 
 // Size
+export const SizeM = "512px"
 export const SizeL = "1024px"
 export const SizeXL = "1088px"
+export const SizeXXL = "1536px"

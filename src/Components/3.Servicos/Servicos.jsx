@@ -1,12 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
-import { black, lightBlue, blue, brown } from "../Utils/tokens"
+import { black, lightBlue, blue, brown, SizeXXL } from "../Utils/tokens"
 import Colchão from "../../img/ServicosMatress.png"
 import Sofa from "../../img/ServicosCouch.png"
 import Carpete from "../../img/ServicosCarpet.png"
 import { ServicoButton } from "./servico-button"
 import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
+import { LayoutWrapper } from "../Utils/LayoutWrapper"
 
 export const SERVICOS = {
   colchoes: {
@@ -35,28 +36,30 @@ export const Servicos = () => {
   const isSmallScreen = useIsSmallScreen()
 
   return (
-    <StyledServicos id='servico'>
-      {!isSmallScreen && <h2 children={"SERVIÇOS"} />}
-      <StyledFrame>
-        <img
-          src={SERVICOS[service].image.src}
-          alt={SERVICOS[service].image.alt}
-          loading='lazy'
-        />
-      </StyledFrame>
-      <Wrapper>
-        {isSmallScreen && <h2 children={"SERVIÇOS"} />}
-        <nav>
-          <ServicoButton {...{ service, setService }} type='colchoes' />
-          <ServicoButton {...{ service, setService }} type='sofas' />
-          <ServicoButton {...{ service, setService }} type='carpetes' />
-        </nav>
-        <p children={SERVICOS[service].content} />
-        <Button>
-          <Link to='/servicos' children={"Ler mais"} />
-        </Button>
-      </Wrapper>
-    </StyledServicos>
+    <LayoutWrapper width={SizeXXL}>
+      <StyledServicos id='servico'>
+        {!isSmallScreen && <h2 children={"SERVIÇOS"} />}
+        <StyledFrame>
+          <img
+            src={SERVICOS[service].image.src}
+            alt={SERVICOS[service].image.alt}
+            loading='lazy'
+          />
+        </StyledFrame>
+        <Wrapper>
+          {isSmallScreen && <h2 children={"SERVIÇOS"} />}
+          <nav>
+            <ServicoButton {...{ service, setService }} type='colchoes' />
+            <ServicoButton {...{ service, setService }} type='sofas' />
+            <ServicoButton {...{ service, setService }} type='carpetes' />
+          </nav>
+          <p children={SERVICOS[service].content} />
+          <Button>
+            <Link to='/servicos' children={"Ler mais"} />
+          </Button>
+        </Wrapper>
+      </StyledServicos>
+    </LayoutWrapper>
   )
 }
 
