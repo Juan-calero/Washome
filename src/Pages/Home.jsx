@@ -11,8 +11,8 @@ function Home() {
       <Header />
       <Fold />
       <Servicos />
-      <Sobre />
       <Testemunhos />
+      <Sobre />
     </React.Fragment>
   )
 }

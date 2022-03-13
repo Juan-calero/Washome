@@ -25,22 +25,12 @@ html {
     margin: 0;
 }
 
-h1 {
-    font-size: 3rem;
-    color: $blue;
-    margin: 0;
-}
-
 h2 {
     font-size: 1.75rem;
 }
 
-p,
-a {
-    font-size: 1rem;
-}
 p {
-    width: #{"min(100%,60ch)"};
+    font-size: 1rem;
 }
 
 textarea {

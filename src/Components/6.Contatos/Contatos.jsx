@@ -13,7 +13,6 @@ export const Contatos = () => (
     <BrownBubble loading='lazy' src={SmallBubble} alt='' />
     <ContatosHeader />
     <ContactForm />
-    <ContactUsAt />
   </StyledContato>
 )
 

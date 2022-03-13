@@ -1,20 +1,28 @@
 import React from "react"
 import styled from "styled-components"
 import { lightBlue, black } from "../Utils/tokens"
+import { ContactUsAt } from "./contact-us-at"
 
 export const ContactForm = () => (
-  <StyledContactForm
-    method='POST'
-    action='https://formspree.io/f/mbjqdgwj'
-    id='contato--form'>
-    <div>
-      <input type='text' placeholder='Nome*' name='Nome' required />
-      <input type='text' placeholder='Telefone*' name='Telefone' required />
-    </div>
-    <input type='email' placeholder='Email' name='_replyto' />
-    <textarea placeholder='Mensagem*' name='message' rows='10' required />
-    <button className='btn__blue' type='submit' children={"Fale Connosco"} />
-  </StyledContactForm>
+  <React.Fragment>
+    <StyledContactForm
+      method='POST'
+      action='https://formspree.io/f/mbjqdgwj'
+      id='contato--form'>
+      <div>
+        <input type='text' placeholder='Nome*' name='Nome' required />
+        <input type='text' placeholder='Telefone*' name='Telefone' required />
+      </div>
+      <input type='email' placeholder='Email' name='_replyto' />
+      <textarea placeholder='Mensagem*' name='message' rows='10' required />
+      <button
+        className='btn__blue'
+        type='submit'
+        children={"PEDIR ORÇAMENTO"}
+      />
+    </StyledContactForm>
+    <ContactUsAt />
+  </React.Fragment>
 )
 
 const StyledContactForm = styled.form`

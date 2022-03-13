@@ -1,43 +1,45 @@
 import React from "react"
 import FoldBg from "../../img/carpet-cleaning.png"
 import styled from "styled-components"
-import { white, ZIndexMiddle, ZIndexBackground, SizeM } from "../Utils/tokens"
+import {
+  white,
+  ZIndexMiddle,
+  ZIndexBackground,
+  SizeM,
+  SpaceL,
+  SizeXS,
+  SpaceXS,
+  SpaceM,
+} from "../Utils/tokens"
 import { ContactForm } from "../6.Contatos/contact-form"
-import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
 import { LayoutWrapper } from "../Utils/LayoutWrapper"
+import { ServicesBanner } from "./services-banner"
 
-export const Fold = () => {
-  const { isSmallScreen } = useIsSmallScreen()
-
-  return (
+export const Fold = () => (
+  <React.Fragment>
     <LayoutWrapper>
       <StyledFold>
         <StyledCopy>
-          <h1>LIMPEZA TÊXTIL</h1>
-          <Subline>Carpetes. Sofás. Colchões.</Subline>
+          <h1>LIMPEZA AO DOMICILIO COMO NUNCA A VIU</h1>
+          <h3>Carpetes. Sofás. Colchões.</h3>
         </StyledCopy>
-        <ContactFormWrapper>
-          {!isSmallScreen && <ContactForm />}
-        </ContactFormWrapper>
+        <ContactFormWrapper children={<ContactForm />} />
       </StyledFold>
     </LayoutWrapper>
-  )
-}
-
-const ContactFormWrapper = styled.div`
-  width: ${SizeM};
-  background: white;
-`
+    <ServicesBanner />
+  </React.Fragment>
+)
 
 const StyledFold = styled.section`
-  width: 100%;
   margin: auto;
+  padding: ${SizeXS} ${SpaceL};
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
+  flex-wrap: wrap;
   background: url(${FoldBg}) left bottom/cover no-repeat;
-  height: 700px;
+  min-height: 700px;
   position: relative;
   z-index: ${ZIndexBackground};
   &::after {
@@ -54,12 +56,14 @@ const StyledFold = styled.section`
     z-index: ${ZIndexMiddle};
   }
 `
-const StyledCopy = styled.div`
+const StyledCopy = styled.span`
   font-weight: 900;
+  color: ${white};
 `
 
-const Subline = styled.h3`
-  font-size: min(6vw, 1.7rem);
-  color: ${white};
-  margin: 0;
+const ContactFormWrapper = styled.div`
+  width: ${SizeM};
+  border-radius: ${SpaceXS};
+  padding: ${SpaceM};
+  background: white;
 `
