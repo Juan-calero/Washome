@@ -39,7 +39,7 @@ const StyledFold = styled.section`
   align-items: center;
   flex-wrap: wrap;
   background: url(${FoldBg}) left bottom/cover no-repeat;
-  min-height: 700px;
+  height: 700px;
   position: relative;
   z-index: ${ZIndexBackground};
   &::after {

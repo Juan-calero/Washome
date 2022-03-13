@@ -20,6 +20,7 @@ export const Testemunhos = () => {
 
   return (
     <StyledTestemunhos id='testemunhos'>
+      <Empresas />
       <Carousel {...{ testemunho }} />
       <StyledCardNavigator>
         {testemunhosArr.map((_, index) => (
@@ -31,7 +32,6 @@ export const Testemunhos = () => {
         ))}
       </StyledCardNavigator>
       <MyBusinessIcon />
-      <Empresas />
     </StyledTestemunhos>
   )
 }
@@ -39,15 +39,11 @@ export const Testemunhos = () => {
 const StyledTestemunhos = styled.section`
   background: ${lightestGrey};
   color: ${white};
-  padding-top: 15vh;
   position: relative;
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media screen and (min-width: 1024px) {
-    padding-top: 10vh;
-  }
 `
 
 const StyledCardNavigator = styled.nav`

@@ -1,48 +1,76 @@
 import React from "react"
-import FoldBg from "../../img/carpet-cleaning.png"
 import styled from "styled-components"
 import {
   white,
-  ZIndexMiddle,
   ZIndexBackground,
   SizeM,
-  SizeS,
+  SizeXS,
   lightBlue,
+  SizeXL_S,
+  SpaceM,
+  SpaceXL,
+  SpaceL,
+  SpaceXS,
 } from "../Utils/tokens"
-import { ContactForm } from "../6.Contatos/contact-form"
-import { useIsSmallScreen } from "../Utils/useIsSmallScreen"
 import { LayoutWrapper } from "../Utils/LayoutWrapper"
+import { Icon } from "@iconify/react"
+
+const CONTACTUSAT = [
+  {
+    text: "ÁCAROS E FUNGOS",
+    icon: "ant-design:bug-filled",
+  },
+  {
+    text: "MANCHAS E SUJIDADE​",
+    icon: "mdi:liquid-spot",
+  },
+  {
+    text: "IMPERMEABILIZAÇÃO",
+    icon: "ic:baseline-water-drop",
+  },
+  {
+    text: "MAUS ODORES",
+    icon: "carbon:face-dizzy-filled",
+  },
+  {
+    text: "PELOS DE ANIMAL",
+    icon: "fluent:animal-dog-24-filled",
+  },
+]
 
 export const ServicesBanner = () => {
   return (
-    <LayoutWrapper>
-      <StyledFold></StyledFold>
+    <LayoutWrapper width={SizeXL_S}>
+      <StyledFold>
+        {CONTACTUSAT.map(({ text, icon }, key) => (
+          <Item {...{ key }}>
+            <Icon {...{ icon }} width={SpaceXL} height={SpaceXL} />
+            <StyledText {...{ children: text }} />
+          </Item>
+        ))}
+      </StyledFold>
     </LayoutWrapper>
   )
 }
 
-const ContactFormWrapper = styled.div`
-  width: ${SizeM};
-  background: white;
-`
-
 const StyledFold = styled.section`
   width: 100%;
+  border-radius: ${SpaceM};
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   background: ${lightBlue};
-  height: ${SizeS};
-  position: relative;
-  z-index: ${ZIndexBackground};
-`
-const StyledCopy = styled.div`
-  font-weight: 900;
 `
 
-const Subline = styled.h3`
-  font-size: min(6vw, 1.7rem);
+const Item = styled.div`
+  margin: ${SpaceM} ${SpaceL};
   color: ${white};
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const StyledText = styled.p`
+  margin-top: ${SpaceXS};
 `
